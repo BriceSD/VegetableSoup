@@ -13,8 +13,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import java.io.Serializable;
+
 public class SoupIngredientsListAdapter
-    extends BaseAdapter {
+    extends BaseAdapter implements Serializable {
 
 // ------------------------------ FIELDS ------------------------------
 

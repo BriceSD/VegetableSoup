@@ -23,12 +23,12 @@ public class MainActivity
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    final Spinner  sw1                   = (Spinner) findViewById(R.id.spinner_list_ingredients);
-    final TextView soupRecipeIngredients = (TextView) findViewById(R.id.soupeRecipeIngredients);
+    final Spinner  ingredientsList       = (Spinner) findViewById(R.id.spinner_list_ingredients);
+    final TextView soupRecipeIngredients = (TextView) findViewById(R.id.soup_recipe_ingredients);
 
 
     adapter = new SoupIngredientsListAdapter(this);
-    sw1.setAdapter(adapter);
+    ingredientsList.setAdapter(adapter);
 
     Button addVegetable    = (Button) findViewById(R.id.addVegetable);
     Button removeVegetable = (Button) findViewById(R.id.removeVegetable);
@@ -36,7 +36,7 @@ public class MainActivity
     addVegetable.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        final int selectedItemPosition = sw1.getSelectedItemPosition();
+        final int selectedItemPosition = ingredientsList.getSelectedItemPosition();
 
         adapter.incrementQuantity(selectedItemPosition);
 
@@ -47,7 +47,7 @@ public class MainActivity
     removeVegetable.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View v) {
-        adapter.decrementQuantity(sw1.getSelectedItemPosition());
+        adapter.decrementQuantity(ingredientsList.getSelectedItemPosition());
         soupRecipeIngredients.setText(makeRecipeIngredientsString());
       }
     });
@@ -93,5 +93,22 @@ public class MainActivity
     }
 
     return super.onOptionsItemSelected(item);
+  }
+
+  @Override
+  protected void onRestoreInstanceState(Bundle savedInstanceState) {
+    super.onRestoreInstanceState(savedInstanceState);
+
+    this.adapter = (SoupIngredientsListAdapter) savedInstanceState.getSerializable("SoupIngredientsListAdapter");
+
+    final TextView soupRecipeIngredients = (TextView) findViewById(R.id.soup_recipe_ingredients);
+    soupRecipeIngredients.setText(makeRecipeIngredientsString());
+  }
+
+  @Override
+  protected void onSaveInstanceState(Bundle outState) {
+    super.onSaveInstanceState(outState);
+
+    outState.putSerializable("SoupIngredientsListAdapter", this.adapter);
   }
 }
