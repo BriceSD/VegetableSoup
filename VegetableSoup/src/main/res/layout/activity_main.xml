@@ -1,0 +1,86 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:paddingBottom="@dimen/activity_vertical_margin"
+                tools:context=".MainActivity">
+
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_alignParentStart="true" android:weightSum="1">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tw1"
+        android:id="@+id/tw1"
+        android:textSize="28sp"
+        android:gravity="center"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tw2"
+        android:id="@+id/tw2"
+        android:layout_marginTop="23dp"
+        android:textSize="15sp" android:layout_gravity="center"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+      <LinearLayout android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+        <Spinner
+            android:layout_width="131dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinner_list_ingredients"/>
+        <Button style="?android:attr/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/removeVegetableButton"
+                android:id="@+id/removeVegetable" android:layout_weight="1"
+                android:layout_marginLeft="8dp"
+                android:layout_gravity="center_horizontal"/>
+        <Button style="?android:attr/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/addVegetableButton"
+                android:id="@+id/addVegetable" android:layout_weight="1"
+                android:layout_marginLeft="8dp"
+                android:layout_gravity="center_horizontal"/>
+      </LinearLayout>
+    </LinearLayout>
+    <ImageView
+        android:layout_width="778dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView" android:layout_gravity="center_horizontal"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginTop="25dp" android:contentDescription="@string/aPicture"
+        android:layout_marginBottom="25dp"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/makeBoiling"
+          android:id="@+id/makeBoiling" android:textSize="20sp"/>
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:id="@+id/soupeRecipeIngredients" android:textSize="20sp"/>
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/addSaltAndPepperText"
+          android:id="@+id/endRecipeText" android:textSize="20sp"/>
+    </LinearLayout>
+  </LinearLayout>
+
+</RelativeLayout>
