@@ -15,16 +15,23 @@ import android.widget.TextView;
 
 public class SoupIngredientsListAdapter
     extends BaseAdapter {
+
+// ------------------------------ FIELDS ------------------------------
+
   private Context  activityContext;
   private String[] ingredients;
   private String[] quantities;
 
+// --------------------------- CONSTRUCTORS ---------------------------
+
   public SoupIngredientsListAdapter(Context activityContext) {
     this.activityContext = activityContext;
     this.ingredients = activityContext.getResources().getStringArray(R.array.soupIngredients);
-    this.quantities = activityContext.getResources().getStringArray(R.array.soupIngredientsQuantities);
+    this.quantities =
+        activityContext.getResources().getStringArray(R.array.soupIngredientsQuantities);
   }
 
+// --------------------- Interface Adapter ---------------------
 
   @Override
   public int getCount() {
@@ -41,15 +48,6 @@ public class SoupIngredientsListAdapter
     return position;
   }
 
-  public void incrementQuantity(int position){
-    quantities[position] = (Integer.valueOf(quantities[position]) + 1) + "";
-  }
-
-  public void decrementQuantity(int position){
-   if (Integer.valueOf(quantities[position]) > 0)
-     quantities[position] = (Integer.valueOf(quantities[position]) - 1) + "";
-  }
-
   @Override
   public View getView(int position, View convertView, ViewGroup parent) {
     LayoutInflater inflater = LayoutInflater.from(activityContext);
@@ -60,5 +58,16 @@ public class SoupIngredientsListAdapter
 
 
     return convertView;
+  }
+
+// -------------------------- OTHER METHODS --------------------------
+
+  public void decrementQuantity(int position) {
+    if (Integer.valueOf(quantities[position]) > 0)
+      quantities[position] = (Integer.valueOf(quantities[position]) - 1) + "";
+  }
+
+  public void incrementQuantity(int position) {
+    quantities[position] = (Integer.valueOf(quantities[position]) + 1) + "";
   }
 }

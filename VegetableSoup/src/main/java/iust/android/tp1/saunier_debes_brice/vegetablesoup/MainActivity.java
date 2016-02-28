@@ -11,7 +11,12 @@ import android.widget.TextView;
 
 public class MainActivity
     extends Activity {
+
+// ------------------------------ FIELDS ------------------------------
+
   SoupIngredientsListAdapter adapter;
+
+// -------------------------- OTHER METHODS --------------------------
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -52,13 +57,14 @@ public class MainActivity
   }
 
   private String makeRecipeIngredientsString() {
-    String str ="";
+    String str = "";
 
     for (int i = 0; i < adapter.getCount(); i++) {
       SoupIngredient soupIngredient = (SoupIngredient) adapter.getItem(i);
       if (Integer.valueOf(soupIngredient.getQuantity()) > 0) {
         if (str.isEmpty())
-          str = getString(R.string.add) + " " + soupIngredient.getQuantity() + " " + soupIngredient.getIngredient();
+          str = getString(R.string.add) + " " + soupIngredient.getQuantity() + " " + soupIngredient
+              .getIngredient();
         else
           str += ", " + soupIngredient.getQuantity() + " " + soupIngredient.getIngredient();
       }

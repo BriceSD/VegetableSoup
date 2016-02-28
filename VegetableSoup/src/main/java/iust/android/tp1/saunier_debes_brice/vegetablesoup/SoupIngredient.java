@@ -15,23 +15,15 @@ public class SoupIngredient {
 
 // --------------------------- CONSTRUCTORS ---------------------------
 
+  public SoupIngredient(String ingredient) {
+    this.ingredient = ingredient;
+    this.quantity = "0";
+  }
   public SoupIngredient(String ingredient, String quantity) {
     this.ingredient = ingredient;
     this.quantity = quantity;
   }
 
-  public SoupIngredient(String ingredient) {
-    this.ingredient = ingredient;
-    this.quantity = "0";
-  }
-
-  public void setIngredient(String ingredient) {
-    this.ingredient = ingredient;
-  }
-
-  public void setQuantity(String quantity) {
-    this.quantity = quantity;
-  }
 // -------------------------- OTHER METHODS --------------------------
 
   public String getIngredient() {
