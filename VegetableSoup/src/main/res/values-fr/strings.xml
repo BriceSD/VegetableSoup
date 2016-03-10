@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">VegetableSoup</string>
+  <string name="addSaltAndPepperText">Maintenant mixez le tout, ajoutez du sel et du poivre…
+    Régalez-vous !
+  </string>
+  <string name="tw1">La recette authentique de la soupe de légume</string>
+  <string name="tw2">Ajoutez légumes pour faire une bonne soupe !</string>
+  <string name="action_settings">Paramètres</string>
+  <string name="add">Ajoutez</string>
+  <string name="aPicture">uneImage</string>
+  <string name="makeBoiling">Faites bouillir l’eau</string>
+  <string-array name="soupIngredients">
+    <item>patate(s)</item>
+    <item>carrote(s)</item>
+    <item>poireau(x)</item>
+  </string-array>
+  <string-array name="soupIngredientsQuantities">
+    <item>0</item>
+    <item>0</item>
+    <item>0</item>
+  </string-array>
+</resources>
