@@ -56,31 +56,38 @@
                 android:layout_gravity="center_horizontal"/>
       </LinearLayout>
     </LinearLayout>
-    <ImageView
-        android:layout_width="778dp"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView" android:layout_gravity="center_horizontal"
-        android:src="@mipmap/ic_launcher"
-        android:contentDescription="@string/aPicture"
-    />
     <LinearLayout
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-      <TextView
+        android:layout_height="match_parent" android:gravity="center_vertical|center"
+        android:layout_gravity="center">
+      <ImageView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:text="@string/makeBoiling"
-          android:id="@+id/makeBoiling" android:textSize="20sp"/>
-      <TextView
+          android:id="@+id/imageView" android:layout_gravity="center"
+          android:src="@mipmap/ic_launcher"
+          android:contentDescription="@string/aPicture"
+      />
+      <LinearLayout
+          android:orientation="vertical"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:id="@+id/soup_recipe_ingredients" android:textSize="20sp"/>
-      <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="@string/addSaltAndPepperText"
-          android:id="@+id/endRecipeText" android:textSize="20sp"/>
+          android:layout_gravity="center" android:layout_marginLeft="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/makeBoiling"
+            android:id="@+id/makeBoiling" android:textSize="20sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/soup_recipe_ingredients" android:textSize="20sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/addSaltAndPepperText"
+            android:id="@+id/endRecipeText" android:textSize="20sp"/>
+      </LinearLayout>
     </LinearLayout>
   </LinearLayout>
 
