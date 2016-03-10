@@ -9,8 +9,10 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.io.Serializable;
+
 public class MainActivity
-    extends Activity {
+    extends Activity implements Serializable{
 
 // ------------------------------ FIELDS ------------------------------
 
@@ -69,8 +71,27 @@ public class MainActivity
           str += ", " + soupIngredient.getQuantity() + " " + soupIngredient.getIngredient();
       }
     }
-
     return str;
+  }
+
+  @Override
+  protected void onResume() {
+    super.onResume();
+  }
+
+  @Override
+  protected void onStop() {
+    super.onStop();
+  }
+
+  @Override
+  protected void onPause() {
+    super.onPause();
+  }
+
+  @Override
+  protected void onDestroy() {
+    super.onDestroy();
   }
 
   @Override
@@ -101,7 +122,7 @@ public class MainActivity
 
     this.adapter = (SoupIngredientsListAdapter) savedInstanceState.getSerializable("SoupIngredientsListAdapter");
 
-    final TextView soupRecipeIngredients = (TextView) findViewById(R.id.soup_recipe_ingredients);
+    TextView soupRecipeIngredients = (TextView) findViewById(R.id.soup_recipe_ingredients);
     soupRecipeIngredients.setText(makeRecipeIngredientsString());
   }
 
