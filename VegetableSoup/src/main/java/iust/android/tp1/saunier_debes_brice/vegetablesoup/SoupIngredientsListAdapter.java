@@ -33,6 +33,15 @@ public class SoupIngredientsListAdapter
         activityContext.getResources().getStringArray(R.array.soupIngredientsQuantities);
   }
 
+  public SoupIngredientsListAdapter(Context activityContext, String[] quantities) {
+    this.activityContext = activityContext;
+    this.ingredients = activityContext.getResources().getStringArray(R.array.soupIngredients);
+    this.quantities = quantities.clone();
+  }
+
+// ------------------------ INTERFACE METHODS ------------------------
+
+
 // --------------------- Interface Adapter ---------------------
 
   @Override
@@ -67,6 +76,10 @@ public class SoupIngredientsListAdapter
   public void decrementQuantity(int position) {
     if (Integer.valueOf(quantities[position]) > 0)
       quantities[position] = (Integer.valueOf(quantities[position]) - 1) + "";
+  }
+
+  public String[] getQuantities() {
+    return quantities;
   }
 
   public void incrementQuantity(int position) {

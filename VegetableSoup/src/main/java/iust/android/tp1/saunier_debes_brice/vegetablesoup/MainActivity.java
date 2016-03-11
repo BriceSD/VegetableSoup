@@ -77,6 +77,14 @@ public class MainActivity
   @Override
   protected void onResume() {
     super.onResume();
+
+    final Spinner  ingredientsList       = (Spinner) findViewById(R.id.spinner_list_ingredients);
+    final TextView soupRecipeIngredients = (TextView) findViewById(R.id.soup_recipe_ingredients);
+
+    adapter = new SoupIngredientsListAdapter(this, adapter.getQuantities());
+    ingredientsList.setAdapter(adapter);
+
+    soupRecipeIngredients.setText(makeRecipeIngredientsString());
   }
 
   @Override
