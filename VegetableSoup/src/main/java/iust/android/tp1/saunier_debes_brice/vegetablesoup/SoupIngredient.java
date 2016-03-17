@@ -28,16 +28,6 @@ public class SoupIngredient {
    * Instancie un nouvel ingrédient de la soupe
    *
    * @param ingredient Le nom de l’ingrédient
-   */
-  public SoupIngredient(String ingredient) {
-    this.ingredient = ingredient;
-    this.quantity = "0";
-  }
-
-  /**
-   * Instancie un nouvel ingrédient de la soupe
-   *
-   * @param ingredient Le nom de l’ingrédient
    * @param quantity   La quantité
    */
   public SoupIngredient(String ingredient, String quantity) {
