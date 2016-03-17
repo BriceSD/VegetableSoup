@@ -78,12 +78,17 @@ public class MainActivity
   private String makeRecipeIngredientsString() {
     String str = "";
 
+    // pour chaque ingrédient
     for (int i = 0; i < adapter.getCount(); i++) {
       SoupIngredient soupIngredient = (SoupIngredient) adapter.getItem(i);
+      // si il y en a au moins un dans la recette
       if (Integer.valueOf(soupIngredient.getQuantity()) > 0) {
+        // si aucun autre ingrédient n’a été mis dans le message, on ajoute "Ajoutez"
+        // puis l’ingrédient lui même
         if (str.isEmpty())
           str = getString(R.string.add) + " " + soupIngredient.getQuantity() + " " + soupIngredient
               .getIngredient();
+        // sinon une virgule puis l’ingrédient lui même
         else
           str += ", " + soupIngredient.getQuantity() + " " + soupIngredient.getIngredient();
       }
@@ -147,7 +152,7 @@ public class MainActivity
     adapter = new SoupIngredientsListAdapter(this, adapter.getQuantities());
     ingredientsList.setAdapter(adapter);
 
-    //Le text est mis à jours.
+    //Le text est mis à jour.
     soupRecipeIngredients.setText(makeRecipeIngredientsString());
   }
 
